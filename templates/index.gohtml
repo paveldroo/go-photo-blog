@@ -6,8 +6,16 @@
 </head>
 <body>
 
-<h1>Hello, {{.UserName}}!</h1>
-<p>Here will be a lot of photos soon!</p>
+<h1>Hello!</h1>
+<p>We have these photos:</p>
+    {{range .}}
+    <img src="/public/pics/{{.}}" width="400px"/>
+    {{end}}
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit">
+</form>
 
 </body>
 </html>
